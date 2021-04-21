@@ -48,7 +48,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     margin: 10px;
     height: 40px;
     display: flex;
-    cursor: pointer;
     justify-content: space-around;
 }
 .act {
@@ -59,7 +58,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     font-size: 16px;
     line-height: 21px;
     color: #FFFFFF;
-    text-align: center;    
+    text-align: center;
+    cursor: pointer;    
 }
 .del{
     width: 150px;
@@ -70,6 +70,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     line-height: 21px;
     color: #FFFFFF;
     text-align: center;
+    cursor: pointer;
 }
 .com{
     width: 150px;
@@ -80,6 +81,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     line-height: 21px;
     color: #FFFFFF;
     text-align: center;
+    cursor: pointer;
 }
 .all{
     width: 150px;
@@ -90,6 +92,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     line-height: 21px;
     color: #FFFFFF;
     text-align: center;
+    cursor: pointer;
 }
 .todo__form {
     display: flex;
@@ -195,4 +198,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .footer__wrapper {
     border-top: 1px solid #FFFFFF;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+.footer__date{
+    margin: 10px 0;
+}
+.footer__project{
+    margin: 10px 0;
 }

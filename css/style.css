@@ -117,7 +117,6 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -132,6 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }
 
 .del {
@@ -144,6 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }
 
 .com {
@@ -156,6 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }
 
 .all {
@@ -168,6 +170,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }
 
 .todo__form {
@@ -307,5 +310,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__wrapper {
   border-top: 1px solid #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__date {
+  margin: 10px 0;
+}
+
+.footer__project {
+  margin: 10px 0;
 }
 /*# sourceMappingURL=style.css.map */
