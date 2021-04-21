@@ -52,7 +52,6 @@ function addClick () {
                 if (!tasksArray[i].deleted) {
                     tasksArray[i].deleted = true;
                     tasksArray[i].active = false;
-                    task.style.backgroundColor = "orange";
                     updateLocalStorage();
                     fillToDoList ();
                 }
@@ -91,7 +90,7 @@ function createTask (task, index) {
     <div class="todo__item 
     ${task.active ? "active" : ''}
     ${task.completed ? "checked" : ''} 
-    ${task.deleted ? "deleted show" : ''}" 
+    ${task.deleted ? "deleted" : ''}" 
     data-task="${index}">    
         <div class="todo__general">
             <div class="todo__text">${task.desc}</div>
@@ -108,6 +107,7 @@ function createTask (task, index) {
 }
 
 const filterTaskBtn = document.querySelector(".filter");
+
 filterTaskBtn.addEventListener("click", (e) => {
     const taskList = document.querySelectorAll(".todo__item");
     if (e.target.classList.contains("act")) {
@@ -135,22 +135,23 @@ function filterTasks(i) {
     
     tasksList.forEach(task => {
         
-        if (i == 0 && task.classList.contains("active")) {
-            task.classList.remove("hide");
-            task.classList.add("show");
+        if (i == 0 && task.classList.contains("active") && !task.classList.contains("deleted")) {
+            changeVisibility (task);            
         }
         else if (i == 1 && task.classList.contains("deleted")) {
-            task.classList.remove("hide");
-            task.classList.add("show");
+            changeVisibility (task);
         }
-        else if (i == 2 && task.classList.contains("checked")) {
-            task.classList.remove("hide");
-            task.classList.add("show");
+        else if (i == 2 && task.classList.contains("checked") && !task.classList.contains("deleted")) {
+            changeVisibility (task);
         }
         else if (i == 3) {
-            task.classList.remove("hide");
-            task.classList.add("show");
+            changeVisibility (task);
         }
 
     });
+}
+
+function changeVisibility (task) {
+    task.classList.remove("hide");
+    task.classList.add("show");
 }
