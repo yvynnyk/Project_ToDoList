@@ -124,8 +124,6 @@ h1, h2, h3, h4, h5, h6 {
 .act {
   width: 150px;
   padding: 9px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#686C6F), to(#373A3C));
-  background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
   border-radius: 4px;
   font-size: 16px;
   line-height: 21px;
@@ -137,8 +135,6 @@ h1, h2, h3, h4, h5, h6 {
 .del {
   width: 150px;
   padding: 9px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#686C6F), to(#373A3C));
-  background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
   border-radius: 4px;
   font-size: 16px;
   line-height: 21px;
@@ -150,8 +146,6 @@ h1, h2, h3, h4, h5, h6 {
 .com {
   width: 150px;
   padding: 9px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#686C6F), to(#373A3C));
-  background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
   border-radius: 4px;
   font-size: 16px;
   line-height: 21px;
@@ -163,8 +157,6 @@ h1, h2, h3, h4, h5, h6 {
 .all {
   width: 150px;
   padding: 9px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#686C6F), to(#373A3C));
-  background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
   border-radius: 4px;
   font-size: 16px;
   line-height: 21px;
@@ -325,5 +317,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__project {
   margin: 10px 0;
+}
+
+.non-active-button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#686C6F), to(#373A3C));
+  background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
+}
+
+.active-button {
+  background: #8DD83D;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=style.css.map */

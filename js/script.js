@@ -4,7 +4,7 @@ const todoForm = document.querySelector(".todo__form");
 const todoDesc = todoForm.querySelector(".todo__description");
 const todoWrapper = document.querySelector(".todo__wrapper");
 
-let filterIndicator = 3; 
+let filterIndicator = 0; 
 let tasksArray;
 
 if (localStorage.tasks) {
@@ -106,21 +106,39 @@ function createTask (task, index) {
     `;
 }
 
+function addNonActiveButton () {
+    document.querySelectorAll(".filter div").forEach(btn => {
+        btn.classList.add("non-active-button");
+        btn.classList.remove("active-button");
+    });
+    document.querySelectorAll(".filter div")[filterIndicator].classList.add("active-button");
+}
+
+addNonActiveButton ();
+
 const filterTaskBtn = document.querySelector(".filter");
 
 filterTaskBtn.addEventListener("click", (e) => {
-    const taskList = document.querySelectorAll(".todo__item");
+    
     if (e.target.classList.contains("act")) {
         filterIndicator = 0;
+        e.target.classList.add("active-button");
+        addNonActiveButton (filterIndicator);
     }
     else if (e.target.classList.contains("del")) {
         filterIndicator = 1;
+        e.target.classList.add("active-button");
+        addNonActiveButton (filterIndicator);
     }
     else if (e.target.classList.contains("com")) {
         filterIndicator = 2;
+        e.target.classList.add("active-button");
+        addNonActiveButton (filterIndicator);
     }
     else if (e.target.classList.contains("all")) {
         filterIndicator = 3;
+        e.target.classList.add("active-button");
+        addNonActiveButton (filterIndicator);
     }
     filterTasks (filterIndicator);
 });
