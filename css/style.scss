@@ -32,6 +32,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 .header__menu {
     color: white;
 }
+.header__clock {
+    color: white;
+}
+
 .main {
     background-color: #979797;
     flex: 1 1 auto;
@@ -110,6 +114,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
         border: 1px solid #29B0D9;
     }
 }
+.todo__duedate {
+    padding: 10px;
+    width: 25%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #435766;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+}
 .todo__add {
     background: #8DD83D;
     border-radius: 4px;
@@ -146,11 +163,21 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .todo__text {
     padding: 0 10px;
-    flex: 1 0 auto;
+    flex: 1 1 80%;
+    max-width: 70%;
     font-size: 25px;
     line-height: 50px;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
+.todo__options {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
 .todo__deadline {
     width: 80px;
     padding: 17px 0 0 0;

@@ -96,6 +96,10 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+.header__clock {
+  color: white;
+}
+
 .main {
   background-color: #979797;
   -webkit-box-flex: 1;
@@ -190,6 +194,20 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #29B0D9;
 }
 
+.todo__duedate {
+  padding: 10px;
+  width: 25%;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #435766;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+
 .todo__add {
   background: #8DD83D;
   border-radius: 4px;
@@ -243,11 +261,28 @@ h1, h2, h3, h4, h5, h6 {
 .todo__text {
   padding: 0 10px;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+  max-width: 70%;
   font-size: 25px;
   line-height: 50px;
   color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo__options {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .todo__deadline {
