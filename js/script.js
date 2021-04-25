@@ -9,7 +9,10 @@ let filterId = 0;
 let tasksArray;
 
 if (localStorage.tasks) {
-    tasksArray = JSON.parse(localStorage.getItem("tasks"));
+    const active = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.active == true);
+    const completed = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.completed == true && x.deleted == false );
+    const deleted = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.deleted == true);
+    tasksArray = [...active,...completed,...deleted];
 }
 else {
     tasksArray = [];
@@ -66,7 +69,6 @@ function updateLocalStorageAndToDoList () {
     updateLocalStorage();
     fillToDoList ();
 }
-
 
 function updateLocalStorage () {
     localStorage.setItem("tasks", JSON.stringify(tasksArray));
