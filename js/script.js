@@ -9,18 +9,24 @@ let filterId = 0;
 let tasksArray;
 
 if (localStorage.tasks) {
-    const active = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.active == true);
-    const completed = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.completed == true && x.deleted == false );
-    const deleted = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.deleted == true);
-    tasksArray = [...active,...completed,...deleted];
+    filterArray ();
 }
 else {
     tasksArray = [];
 }
 
+function filterArray () {
+    const active = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.active == true);
+    const completed = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.completed == true && x.deleted == false );
+    const deleted = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.deleted == true);
+    tasksArray = [...active,...completed,...deleted];
+}
+
 function fillToDoList () {
     todoWrapper.innerHTML = "";
     if (tasksArray.length != 0 ) {
+        filterArray ();
+
         tasksArray.forEach((task, index) => {
              todoWrapper.innerHTML += createTask (task, index);
         });
@@ -126,7 +132,6 @@ function changeActiveButton () {
 
 changeActiveButton ();
 
-
 document.querySelector(".filter").addEventListener("click", (e) => {
     
     if (e.target.classList.contains("act")) {
@@ -181,7 +186,6 @@ function showFilteredTask (task) {
     task.classList.add("show");
 }
 
-
 function getDate (currentDate) {
     const date = getFirstZero(currentDate.getDate());
     const year = currentDate.getFullYear();
@@ -228,4 +232,6 @@ function getFirstZero (num) {
 setClock ();
 setInterval(setClock, 1000);
 
+
+//////
 
