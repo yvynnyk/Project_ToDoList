@@ -9,24 +9,15 @@ let filterId = 0;
 let tasksArray;
 
 if (localStorage.tasks) {
-    filterArray ();
+    tasksArray = JSON.parse(localStorage.getItem("tasks"));
 }
 else {
     tasksArray = [];
 }
 
-function filterArray () {
-    const active = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.active == true);
-    const completed = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.completed == true && x.deleted == false );
-    const deleted = [...JSON.parse(localStorage.getItem("tasks"))].filter(x => x.deleted == true);
-    tasksArray = [...active,...completed,...deleted];
-}
-
-function fillToDoList () {
+function renderTasksItems () {
     todoWrapper.innerHTML = "";
     if (tasksArray.length != 0 ) {
-        filterArray ();
-
         tasksArray.forEach((task, index) => {
              todoWrapper.innerHTML += createTask (task, index);
         });
@@ -34,7 +25,7 @@ function fillToDoList () {
     addClickToTaskItem ();
 }
 
-fillToDoList ();
+renderTasksItems ();
 
 function addClickToTaskItem () {
     const todoTask = document.querySelectorAll(".todo__item");
@@ -57,7 +48,7 @@ function addClickToTaskItem () {
                 if (!tasksArray[i].deleted) {
                     tasksArray[i].deleted = !tasksArray[i].deleted;
                     tasksArray[i].active = !tasksArray[i].active;
-                    updateLocalStorageAndToDoList ();
+                    initUpdates ();
                 }
             }
         });
@@ -68,12 +59,12 @@ function addClickToTaskItem () {
 function changeCompletedStatus (i) {
     tasksArray[i].completed = !tasksArray[i].completed;
     tasksArray[i].active = !tasksArray[i].active;
-    updateLocalStorageAndToDoList ();
+    initUpdates ();
 }
 
-function updateLocalStorageAndToDoList () {
+function initUpdates () {
     updateLocalStorage();
-    fillToDoList ();
+    renderTasksItems ();
 }
 
 function updateLocalStorage () {
@@ -95,7 +86,7 @@ todoForm.addEventListener("submit", (e) => {
 
     tasksArray.push(new newToDoTask (todoDesc.value, todoTime.value, true ,false, false));
     updateLocalStorage ();
-    fillToDoList ();
+    renderTasksItems ();
     todoForm.reset();
 });
 
@@ -231,7 +222,4 @@ function getFirstZero (num) {
 
 setClock ();
 setInterval(setClock, 1000);
-
-
-//////
 

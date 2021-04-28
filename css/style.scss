@@ -24,16 +24,21 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     max-width: 970px;
     margin: 0 auto;
 }
+
+
 .header {
     height: 60px;
-    background: #373A3C;  
-}
-
-.header__menu {
-    color: white;
-}
-.header__clock {
-    color: white;
+    background: #373A3C;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__menu {
+        color: white;
+    }
+    &__clock {
+        color: white;
+    }  
 }
 
 .main {
@@ -217,20 +222,20 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     height: 75px;
     padding: 10px 0 0 0;
     background-color: #373A3C;
+    &__wrapper {
+        border-top: 1px solid #FFFFFF;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+    }
+    &__date {
+        margin: 10px 0;
+    }
+    &__project{
+        margin: 10px 0;
+    }
+}
 
-}
-.footer__wrapper {
-    border-top: 1px solid #FFFFFF;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-}
-.footer__date{
-    margin: 10px 0;
-}
-.footer__project{
-    margin: 10px 0;
-}
 .non-active-button{
     background: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
 }
